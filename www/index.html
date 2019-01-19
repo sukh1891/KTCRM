@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+        <title>Login</title>
+        <link rel="stylesheet" type="text/css" href="css/index.css"/>
+        <link href="css/font-awesome.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body onload="onLoad();">
+        <div class="index">
+            <img src="img/logo.png"/>
+            <br/>
+            <input class="field" id="email" type="email" placeholder="Email Id / Mobile" />
+            <br/>
+            <input class="field" id="password" type="password" placeholder="Password" />
+            <br/>
+            <button class="button" id="login">Login</button>
+            <div class="register">
+                <a id="forgot">Forgot Password?</a>
+            </div>
+            <div class="register">
+                <i>Not a member?</i> <a href="https://khuranatech.in/pro/crm/signup.php">Register</a>.
+            </div>
+            <div class="register">
+                <a id="recharge">Recharge Now</a>
+            </div>
+        </div>
+        <div class="forgot">
+            <h3>Forgot Password</h3>
+            <input class="field" id="formail" type="email" placeholder="Email Id" />
+            <br/>
+            <input class="field" id="formob" type="tel" placeholder="Mobile Number" />
+            <br/>
+            <button class="button" id="formit">Submit</button>
+            <div class="register">
+                <a id="indexb"><< Back</a>
+            </div>
+        </div>
+        <div class="recharge">
+            <h3>Recharge Now</h3>
+            <select class="field" id="rechage" onchange="paynow(this.value);">
+                <option value="">Select Package</option>
+                <option value="750">&#8377; 590/- [750 SMS]</option>
+                <option value="2000">&#8377; 1180/- [2000 SMS]</option>
+                <option value="5000">&#8377; 2360/- [5000 SMS]</option>
+            </select>
+            <div class="paynow pn750">
+                <a href="https://www.instamojo.com/khuranatech/ktech-crm-business-pack/" rel="im-checkout" data-behaviour="remote" data-style="no-style" data-text="Pay Now"></a>
+            </div>
+            <div class="paynow pn2000">
+                <a href="https://www.instamojo.com/khuranatech/ktech-crm-business-pack-03006/" rel="im-checkout" data-behaviour="remote" data-style="no-style" data-text="Pay Now"></a>
+            </div>
+            <div class="paynow pn5000">
+                <a href="https://www.instamojo.com/khuranatech/ktech-crm-enterprise-pack/" rel="im-checkout" data-behaviour="remote" data-style="no-style" data-text="Pay Now"></a>
+            </div>
+            <div class="register">
+                <a id="index"><< Back</a>
+            </div>
+        </div>
+        <div class="cpanel">
+            <div class="siteinfo">
+                <div class="title"><i class="fa fa-chevron-left"></i>kTech CRM</div>
+                <div class="logout"><i class="fa fa-power-off"></i></div>
+            </div>
+            <div class="content">
+                <div class="dashboard contdiv">
+                    <div class="navitem custlink">
+                        <i class="fa fa-users"></i>
+                        Customers
+                    </div>
+                    <div class="navitem salelink">
+                        <i class="fa fa-shopping-cart"></i>
+                        Sales
+                    </div>
+                    <div class="navitem addclink">
+                        <i class="fa fa-user-plus"></i>
+                        Add Customer
+                    </div>
+                    <div class="navitem addslink">
+                        <i class="fa fa-cart-plus"></i>
+                        Add Sale
+                    </div>
+                    <div class="sms"></div>
+                </div>
+                <div class="customers contdiv othpag">
+                    <h3>
+                        Last 25 customers
+                    </h3>
+                    <div class="dashth">
+                        <div class="name th">Name</div>
+                        <div class="company th">Company</div>
+                        <div class="mobile th">Mobile</div>
+                    </div>
+                    <div id="customers"></div>
+                </div>
+                <div class="sale contdiv othpag">
+                    <h3>
+                        Last 25 sales
+                    </h3>
+                    <div class="dashth">
+                        <div class="customer th">Customer</div>
+                        <div class="date th">Date</div>
+                        <div class="amount th">Amount</div>
+                    </div>
+                    <div id="sales"></div>
+                </div>
+                <div class="newcust contdiv othpag">
+                    <h3>New Customer</h3>
+                    <br/>
+                    Name *
+                    <br/>
+                    <input class="field" id="cusname" type="text"/>
+                    <br/>
+                    Company
+                    <br/>
+                    <input class="field" id="cuscomp" type="number"/>
+                    <br/>
+                    Email Id
+                    <br/>
+                    <input class="field" id="cusemai" type="email"/>
+                    <br/>
+                    Mobile *
+                    <br/>
+                    <input class="field" id="cusmob" type="number"/>
+                    <br/>
+                    Date of Birth
+                    <br/>
+                    <input class="field" id="cusdate" type="date"/>
+                    <br/>
+                    <label>
+                        <input type="checkbox" id="cussale"/> Add Sale
+                    </label>
+                    <br/>
+                    <button class="button" id="cussubm">Submit</button>
+                </div>
+                <div class="newsal contdiv othpag">
+                    <h3>New Sale</h3>
+                    <br/>
+                    Customer *
+                    <br/>
+                    <select class="field" id="salcust" name="salcust">
+                        <option value="">select</option>
+                        
+                    </select>
+                    <br/>
+                    Date *
+                    <br/>
+                    <input class="field" id="saldate" type="date"/>
+                    <br/>
+                    Amount (&#8377;) *
+                    <br/>
+                    <input class="field" id="salamou" type="number"/>
+                    <br/>
+                    Remarks
+                    <br/>
+                    <textarea class="field" id="expremarks"></textarea>
+                    <br/>
+                    <button class="button" id="expsubmit">Submit</button>
+                </div>
+                <div class="confdel">
+                    <div class="confirm">
+                        <h3></h3>
+                        <div class="confdata"></div>
+                    </div>
+                </div>
+                <div class="confadd"></div>
+                <div class="loading"></div>
+            </div>
+        </div>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/dashboard.js"></script>
+        <script src="https://js.instamojo.com/v1/button.js"></script>
+        <script>
+            dashboard();
+        </script>
+    </body>
+</html>

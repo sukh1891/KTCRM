@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.ktech.crm" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>kTech CRM</name>
+    <description>
+        kTech CRM is a great tool to keep record of all your customers and sales. You can stay connected to the customers by updating them about thier purchase. Also you can inform them about new offers or products in order to increase your sales.
+    </description>
+    <author email="crm@khuranatech.in" href="http://crm.khuranatech.in">
+        Khurana Technologies
+    </author>
+    <content src="index.html" />
+    <preference name="orientation" value="portrait"/>
+    <preference name="fullscreen" value="false"/>
+    <preference name="target-device" value="universal"/>
+    <preference name="webviewbounce" value="true"/>
+    <preference name="prerendered-icon" value="true"/>
+    <preference name="stay-in-webview" value="false"/>
+    <preference name="show-splash-screen-spinner" value="false"/>
+    <preference name="detect-data-types" value="true"/>
+    <preference name="exit-on-suspend" value="false"/>
+    <preference name="disable-cursor" value="false"/>
+    <preference name="android-minSdkVersion" value="14"/>
+    <preference name="android-installLocation" value="auto"/>
+    <preference name="AutoHideSplashScreen" value="true"/>
+    <plugin name="cordova-plugin-device-orientation" />
+    <plugin name="cordova-plugin-network-information" />
+    <plugin name="cordova-plugin-splashscreen" />
+    <plugin name="cordova-plugin-device" />
+    <plugin name="cordova-plugin-websql" />
+    <access origin="*" />
+    <plugin name="cordova-plugin-whitelist" version="1"/>
+    <allow-intent href="http://*/*"/>
+    <allow-intent href="https://*/*"/>
+    <allow-intent href="mailto:*"/>
+    <allow-intent href="whatsapp://*/*"/>
+    <platform name="android">
+        <allow-intent href="market:*"/>
+        <icon src="www/img/icon.png"/>
+        <splash src="www/img/app-splash.png" density="mdpi"/>
+        <intent-filter>
+            <action android:name="android.intent.action.VIEW"/>
+            <category android:name="android.intent.category.DEFAULT"/>
+            <category android:name="android.intent.category.BROWSABLE"/>
+            <data android:host="www.ktcrm.in" android:path="/launch" android:scheme="http"/>
+        </intent-filter>
+    </platform>
+</widget>
